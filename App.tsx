@@ -7,8 +7,10 @@ import { AdminPage } from './components/AdminPage';
 import appRhi from './images/appRhi.jpg';
 
 type BookingStep = 'service' | 'datetime' | 'details' | 'confirmation';
+type AppView = 'booking' | 'admin-login' | 'admin-dashboard';
 
 const App: React.FC = () => {
+    const [view, setView] = useState<AppView>('booking');
     const [adminToken, setAdminToken] = useState<string | null>(
       typeof window !== 'undefined' ? localStorage.getItem('adminToken') : null
     );
@@ -44,11 +46,13 @@ const App: React.FC = () => {
 
     const handleAdminLogin = (token: string) => {
         setAdminToken(token);
+        setView('admin-dashboard');
     };
 
     const handleAdminLogout = () => {
         setAdminToken(null);
         localStorage.removeItem('adminToken');
+        setView('booking');
     };
     
     const renderStep = () => {
@@ -79,8 +83,10 @@ const App: React.FC = () => {
 
     return (
         <>
-            {adminToken ? (
+            {view === 'admin-dashboard' ? (
                 <AdminPage onLogout={handleAdminLogout} />
+            ) : view === 'admin-login' ? (
+                <LoginPage onLoginSuccess={handleAdminLogin} />
             ) : (
                 <main className="bg-[#F5EEDC] min-h-screen text-[#4A2C21] flex items-center justify-center p-4">
                     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
@@ -89,15 +95,13 @@ const App: React.FC = () => {
                                <img src={appRhi} alt="RHI Cleaning" className="w-full h-full object-cover rounded-lg" />
                             </div>
                         </div>
-                        <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
-                            <div className="absolute top-4 right-4">
-                                <button
-                                    onClick={() => alert('Admin login coming soon - Email: admin@rhicleaning.com')}
-                                    className="text-xs text-white hover:underline opacity-70"
-                                >
-                                    Admin
-                                </button>
-                            </div>
+                        <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col relative">
+                            <button
+                                onClick={() => setView('admin-login')}
+                                className="absolute top-4 right-4 text-xs text-white opacity-50 hover:opacity-100"
+                            >
+                                Admin Login
+                            </button>
                             {renderStep()}
                         </div>
                     </div>
