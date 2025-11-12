@@ -72,12 +72,12 @@ const App: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/4 translate-y-1/3"></div>
                     </div>
                     <div className="relative z-10">
-                        <h1 className="font-display text-9xl md:text-10xl font-bold mb-2 drop-shadow-lg">RHI</h1>
-                        <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 drop-shadow-md">FULL SERVICE<br/>HOUSE CLEANING</h2>
+                        <h1 className="font-display text-8xl md:text-8xl font-bold mb-2 drop-shadow-lg">RHI</h1>
+                        <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 drop-shadow-md">FULL SERVICE<br/>HOUSE CLEANING</h2>
                         <div className="w-full max-w-sm mx-auto mb-12">
                            <img src={appRhi} alt="RHI Cleaning Service" className="w-full h-auto rounded-3xl shadow-2xl border-4 border-white drop-shadow-lg" />
                         </div>
-                        <p className="font-display text-xl md:text-2xl italic font-semibold leading-relaxed max-w-lg mx-auto drop-shadow-md">We are here to RHIpeat service, not to RHIpeat mistakes.</p>
+                        <p className="font-display text-lg md:text-xl italic font-semibold leading-relaxed max-w-lg mx-auto drop-shadow-md">We are here to RHIpeat service, not to RHIpeat mistakes.</p>
                     </div>
                 </div>
                 <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
