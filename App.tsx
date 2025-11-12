@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { Service } from './types';
 import { SERVICES, TIME_SLOTS, MOCKED_BOOKINGS } from './constants';
 import { Calendar } from './components/Calendar';
-import appRhi from './images/Now Accepting Orders!.png';
+import appRhi from './images/appRhi.jpg';
 
 type BookingStep = 'service' | 'datetime' | 'details' | 'confirmation';
 
