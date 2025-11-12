@@ -65,18 +65,10 @@ const App: React.FC = () => {
 
     return (
         <main className="bg-[#F5EEDC] min-h-screen text-[#4A2C21] flex items-center justify-center p-4">
-            <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
-                <div className="bg-[#F5EEDC] p-8 md:p-12 flex flex-col justify-between">
-                    <div>
-                        <h1 className="font-display text-7xl md:text-8xl font-bold text-[#B48A4D]">RHI</h1>
-                        <h2 className="font-display text-3xl md:text-4xl text-[#B48A4D] mt-2">FULL SERVICE<br/>HOUSE CLEANING</h2>
-                        <div className="w-full max-w-[300px] my-8">
-                           <img src={appRhi} alt="RHI Cleaning" className="w-full h-auto rounded-lg shadow-lg" />
-                        </div>
-                    </div>
-                    <div>
-                        <p className="font-display text-2xl italic text-[#B45339]">We are here to RHIpeat service, not to RHIpeat mistakes.</p>
-                        <hr className="border-t-2 border-[#B48A4D] mt-4 w-1/3"/>
+            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
+                <div className="bg-[#F5EEDC] p-8 md:p-12 flex flex-col items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center">
+                       <img src={appRhi} alt="RHI Cleaning" className="w-full h-full object-cover rounded-lg" />
                     </div>
                 </div>
                 <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
