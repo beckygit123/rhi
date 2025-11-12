@@ -2,7 +2,6 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { Service } from './types';
 import { SERVICES, TIME_SLOTS, MOCKED_BOOKINGS } from './constants';
 import { Calendar } from './components/Calendar';
-import appRhiImage from './images/appRhi.jpg';
 
 type BookingStep = 'service' | 'datetime' | 'details' | 'confirmation';
 
@@ -71,7 +70,7 @@ const App: React.FC = () => {
                         <h1 className="font-display text-7xl md:text-8xl font-bold text-[#B48A4D]">RHI</h1>
                         <h2 className="font-display text-3xl md:text-4xl text-[#B48A4D] mt-2">FULL SERVICE<br/>HOUSE CLEANING</h2>
                         <div className="w-full max-w-[300px] my-8">
-                           <img src={appRhiImage} alt="RHI Cleaning" className="w-full h-auto rounded-lg shadow-lg" />
+                           <img src="./images/appRhi.jpg" alt="RHI Cleaning" className="w-full h-auto rounded-lg shadow-lg" />
                         </div>
                     </div>
                     <div>
