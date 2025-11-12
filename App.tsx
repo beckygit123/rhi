@@ -66,21 +66,21 @@ const App: React.FC = () => {
     return (
         <main className="bg-[#F5EEDC] min-h-screen text-[#4A2C21] flex items-center justify-center p-4">
             <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 shadow-2xl rounded-lg overflow-hidden">
-                <div className="lg:col-span-2 bg-gradient-to-br from-[#B48A4D] via-[#B45339] to-[#8B3A24] p-12 flex flex-col items-center justify-center text-center text-white relative overflow-hidden">
+                <div className="bg-gradient-to-br from-[#B48A4D] via-[#B45339] to-[#8B3A24] p-8 md:p-12 flex flex-col items-center justify-center text-center text-white relative overflow-hidden">
                     <div className="absolute inset-0 opacity-5">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/3 -translate-y-1/2"></div>
                         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/4 translate-y-1/3"></div>
                     </div>
-                    <div className="relative z-10">
-                        <h1 className="font-display text-8xl md:text-8xl font-bold mb-2 drop-shadow-lg">RHI</h1>
-                        <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 drop-shadow-md">FULL SERVICE<br/>HOUSE CLEANING</h2>
-                        <div className="w-full max-w-sm mx-auto mb-12">
+                    <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                        <h1 className="font-display text-6xl md:text-7xl font-bold mb-2 drop-shadow-lg">RHI</h1>
+                        <h2 className="font-display text-2xl md:text-3xl font-bold mb-8 drop-shadow-md">FULL SERVICE<br/>HOUSE CLEANING</h2>
+                        <div className="w-full max-w-xs mx-auto mb-8">
                            <img src={appRhi} alt="RHI Cleaning Service" className="w-full h-auto rounded-3xl shadow-2xl border-4 border-white drop-shadow-lg" />
                         </div>
-                        <p className="font-display text-lg md:text-xl italic font-semibold leading-relaxed max-w-lg mx-auto drop-shadow-md">We are here to RHIpeat service, not to RHIpeat mistakes.</p>
+                        <p className="font-display text-sm md:text-base italic font-semibold leading-relaxed max-w-xs mx-auto drop-shadow-md">We are here to RHIpeat service, not to RHIpeat mistakes.</p>
                     </div>
                 </div>
-                <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
+                <div className="lg:col-span-2 bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
                     {renderStep()}
                 </div>
             </div>
