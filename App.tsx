@@ -308,7 +308,7 @@ const ConfirmationStep: React.FC<ConfirmationStepProps> = ({ service, date, time
             <p><strong>Address:</strong> {details.address}</p>
             {details.notes && <p><strong>Notes:</strong> {details.notes}</p>}
         </div>
-        <p className="opacity-80">We will contact you at {details.email} to confirm.</p>
+        <p className="opacity-80">We've received your booking request! Once our team reviews and approves your appointment, we'll send a confirmation email to {details.email}.</p>
         <button 
             onClick={onRestart}
             className="w-full mt-8 bg-[#F5EEDC] text-[#B45339] font-bold py-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all"
