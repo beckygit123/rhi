@@ -82,47 +82,26 @@ const App: React.FC = () => {
             {adminToken ? (
                 <AdminPage onLogout={handleAdminLogout} />
             ) : (
-                <div className="min-h-screen bg-[#F5EEDC] flex items-center justify-center p-4">
-                    <div className="w-full max-w-2xl">
-                        <div className="text-center mb-8">
-                            <button
-                                onClick={() => setStep('service')}
-                                className="text-sm text-[#B48A4D] hover:underline"
-                            >
-                                ← Back to booking
-                            </button>
+                <main className="bg-[#F5EEDC] min-h-screen text-[#4A2C21] flex items-center justify-center p-4">
+                    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
+                        <div className="bg-[#F5EEDC] p-8 md:p-12 flex flex-col items-center justify-center">
+                            <div className="w-full h-full flex items-center justify-center">
+                               <img src={appRhi} alt="RHI Cleaning" className="w-full h-full object-cover rounded-lg" />
+                            </div>
                         </div>
-                        <button
-                            onClick={() => {
-                                const password = prompt('Enter admin password:');
-                                if (password) {
-                                    // This is just for demo - in real app, use proper login
-                                    alert('Use the admin login page: /admin');
-                                }
-                            }}
-                            className="absolute top-4 right-4 text-xs text-gray-500 hover:text-gray-700"
-                        >
-                            Admin
-                        </button>
-                        
-                        {step === 'login' ? (
-                            <LoginPage onLoginSuccess={handleAdminLogin} />
-                        ) : (
-                            <main className="bg-[#F5EEDC] min-h-screen text-[#4A2C21] flex items-center justify-center p-4">
-                                <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
-                                    <div className="bg-[#F5EEDC] p-8 md:p-12 flex flex-col items-center justify-center">
-                                        <div className="w-full h-full flex items-center justify-center">
-                                           <img src={appRhi} alt="RHI Cleaning" className="w-full h-full object-cover rounded-lg" />
-                                        </div>
-                                    </div>
-                                    <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
-                                        {renderStep()}
-                                    </div>
-                                </div>
-                            </main>
-                        )}
+                        <div className="bg-[#B45339] p-8 md:p-12 text-[#F5EEDC] flex flex-col">
+                            <div className="absolute top-4 right-4">
+                                <button
+                                    onClick={() => alert('Admin login coming soon - Email: admin@rhicleaning.com')}
+                                    className="text-xs text-white hover:underline opacity-70"
+                                >
+                                    Admin
+                                </button>
+                            </div>
+                            {renderStep()}
+                        </div>
                     </div>
-                </div>
+                </main>
             )}
         </>
     );
