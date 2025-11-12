@@ -179,11 +179,34 @@ const DetailsStep: React.FC<DetailsStepProps> = ({ onDetailsSubmit, service, dat
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [notes, setNotes] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (name && phone && address) {
-            onDetailsSubmit({ name, phone, address, notes });
+            setIsSubmitting(true);
+            try {
+                // Save to Vercel API
+                await fetch('/api/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        service: service.name,
+                        date: date.toISOString().split('T')[0],
+                        time,
+                        name,
+                        phone,
+                        address,
+                        notes
+                    })
+                });
+                onDetailsSubmit({ name, phone, address, notes });
+            } catch (error) {
+                console.error('Failed to save booking:', error);
+                onDetailsSubmit({ name, phone, address, notes });
+            } finally {
+                setIsSubmitting(false);
+            }
         }
     };
 
